@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Wumpus World — GitHub Release</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="app">
+  <div class="canvas-wrap card" style="position:relative">
+    <div class="header">
+      <div class="h-title">Wumpus World — GitHub Release</div>
+      <div style="margin-left:auto" class="status" id="status">Ready</div>
+    </div>
+    <canvas id="gameCanvas" width="720" height="720" style="width:720px;height:720px;display:block;margin-top:12px"></canvas>
+    <div id="intro" class="intro" style="display:flex">
+      <div class="cutscene">
+        <h1>Mission: Cave Recover</h1>
+        <p>Agent R enters the dark caves in search of the golden relic. Dangers lurk — stay alert.</p>
+        <div style="display:flex;gap:8px;justify-content:center">
+          <button id="startBtn2" class="btn">Start Mission</button>
+          <button id="introSkip" class="btn small">Skip Intro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="card">
+      <div class="row"><button id="newBtn" class="btn">New World</button><button id="modeBtn" class="btn small">Mode: Manual</button><button id="aiBtn" class="btn small">AI: Off</button><button id="fogBtn" class="btn small">Fog: On</button></div>
+      <div style="margin-top:8px" class="row"><button id="audioBtn" class="btn small">Audio: Off</button><button id="musicBtn" class="btn small">Music: On</button><button id="zipBtn" class="btn small">Export README</button></div>
+      <div style="margin-top:8px" id="controlsExtra" class="status">Arrow: Space • Move: WASD/Arrow • Click to A*</div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight:600;margin-bottom:6px">Agent Status</div>
+      <div class="row"><div>Arrows:</div><div id="arrowCount" style="margin-left:auto">1</div></div>
+      <div class="row"><div>Gold:</div><div id="goldStatus" style="margin-left:auto">No</div></div>
+      <div class="row"><div>Alive:</div><div id="aliveStatus" style="margin-left:auto">Yes</div></div>
+      <div style="margin-top:8px;font-weight:600">Reasoning Log</div>
+      <div id="reasonLog" class="log"></div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight:600;margin-bottom:6px">Legend</div>
+      <div class="legend">
+        <div class="row"><span class="icon" style="background:#ffd166"></span> Agent</div>
+        <div class="row"><span class="icon" style="background:#ff7b7b"></span> Wumpus</div>
+        <div class="row"><span class="icon" style="background:#6b7280"></span> Pit</div>
+        <div class="row"><span class="icon" style="background:#ffd700"></span> Gold</div>
+      </div>
+      <div class="footer">Prepared for GitHub — includes assets & sounds.</div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay-prob card">
+  <div style="font-weight:600;margin-bottom:6px">Probabilities (P(pit|observations))</div>
+  <div id="probPanel" class="prob-grid"></div>
+</div>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>
